@@ -57,10 +57,12 @@ This project highlights engineering solutions to common challenges in OCR post-p
 ### 1. Geometric Text Line Reconstruction
 One of the significant challenges with OCR engines (like ML Kit) is that they often return text in scattered blocks rather than coherent lines, especially when the image is skewed.
 
-To solve this, I implemented a custom **Trigonometric Line Alignment Algorithm** rather than relying on simple Y-axis grouping.
+To solve this, I implemented a custom **Trigonometric Line Alignment Algorithm**.
 
 **The Solution:**
-The algorithm calculates the projected trajectory of a text block based on its rotation angle. By using the center point of a "Left" block and its rotation angle, we calculate the expected Y-coordinate of a potential "Right" block using the tangent function.
+The algorithm calculates the projected trajectory of a text block based on its rotation angle. By using the center point of a "Left" block (`A`) and its rotation angle (`α`), we calculate the expected `Y-coordinate` of a potential "Right" block (`B`) using the tangent function.
+
+<p align="center"> <img src="./assets/docs_img/verticalMarginMathExplanation.png" alt="Trigonometric calculation diagram" /> </p>
 
 *From `lib/core/utils/coordinates.dart`:*
 ```dart
@@ -76,6 +78,12 @@ VerticalMargin.calc(final double rotate, final Offset a, final double x, {final 
   top = countedY + err;
 }
 ```
+
+In this code we have:
+- `double rotate` that represents `rotation angle α`,
+- `Offset a` that represents block `A` coords,
+- `double x` that represents `B.x`
+
 This ensures that prices are correctly associated with product names even if the receipt was photographed at an angle.
 
 ### 2. Custom Image Processing
