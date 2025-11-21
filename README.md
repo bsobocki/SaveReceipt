@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/saveReceipt.png" width="200" />
+ <img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/saveReceipt.png" />
 </p>
 
 # Save Receipt
@@ -23,9 +23,9 @@ Users can digitize receipts through three methods:
 *   **Manual Entry:** For quick logging without images.
 
 <p align="center">
-<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/create_receipt_options.gif" height="400" />
+<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/create_receipt_options.gif" height="600" />
 &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/create_from_image.gif" height="400" />
+<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/create_from_image.gif" height="600" />
 </p>
 
 #### 2. Advanced Data Editor
@@ -35,7 +35,7 @@ OCR is rarely perfect. To address this, the application includes a sophisticated
 *   **Data Validation:** The app automatically validates input formats (e.g., currency formats, timestamps).
 
 <p align="center">
-<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/receipt_editor.gif" height="400"/>
+<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/receipt_editor.gif" height="600"/>
 </p>
 
 #### 3. Search and Organization
@@ -45,7 +45,7 @@ Once saved, receipts are indexed locally. Users can search for specific products
 For low-contrast images, the application includes a "Document Mode" that algorithmically sharpens text and increases contrast for better readability.
 
 <p align="center">
-<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/document_format.gif" height="400"/>
+<img src="https://github.com/bsobocki/save_receipt/blob/main/assets/docs_img/document_format.gif" height="600"/>
 </p>
 
 ---
