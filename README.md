@@ -86,6 +86,10 @@ In this code we have:
 
 This ensures that prices are correctly associated with product names even if the receipt was photographed at an angle.
 
+Those calculations are used to connect blocks into one line. For every text block `A` we search for the block `B` that should be connected with it.\
+That means that we take coord `x` for each block (let's named it `B`) and check whether calculated `y` matches coord `B.y` of this block.\
+We treats it as function that takes variable `x` as `B.x` and checks if `B.y` matches calculated `y` (including error - reading receipts with OCR is not perfect).
+
 ### 2. Custom Image Processing
 To implement the "Document Mode" visualization, the application performs direct image manipulation using convolution matrices.
 *   **Grayscale Conversion:** Reduces channel complexity.
