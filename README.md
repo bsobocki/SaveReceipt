@@ -64,6 +64,10 @@ The algorithm calculates the projected trajectory of a text block based on its r
 
 <p align="center"> <img src="./assets/docs_img/verticalMarginMathExplanation.png" alt="Trigonometric calculation diagram" /> </p>
 
+Those calculations are used to connect blocks into one line. For every text block `A` we search for the block `B` that should be connected.\
+That means that we take coord `x` for each block (let's named it `B`) and check whether calculated `y` matches coord `B.y` of this block. If they matches then this is the block we are looking for.\
+We treats it as a function that takes variable `x` as `B.x` and checks if `B.y` matches calculated `y` (including error - reading receipts with OCR is not perfect) for set block `A` (because we take `A` and try connect it with other blocks).
+
 *From `lib/core/utils/coordinates.dart`:*
 ```dart
 // Calculating the expected Y-coordinate of a neighbor block based on rotation
@@ -85,10 +89,6 @@ In this code we have:
 - `double x` that represents `B.x`
 
 This ensures that prices are correctly associated with product names even if the receipt was photographed at an angle.
-
-Those calculations are used to connect blocks into one line. For every text block `A` we search for the block `B` that should be connected with it.\
-That means that we take coord `x` for each block (let's named it `B`) and check whether calculated `y` matches coord `B.y` of this block.\
-We treats it as function that takes variable `x` as `B.x` and checks if `B.y` matches calculated `y` (including error - reading receipts with OCR is not perfect).
 
 ### 2. Custom Image Processing
 To implement the "Document Mode" visualization, the application performs direct image manipulation using convolution matrices.
