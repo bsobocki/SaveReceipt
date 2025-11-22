@@ -64,9 +64,9 @@ The algorithm calculates the projected trajectory of a text block based on its r
 
 <p align="center"> <img src="./assets/docs_img/verticalMarginMathExplanation.png" alt="Trigonometric calculation diagram" /> </p>
 
-Those calculations are used to connect blocks into one line. For every text block `A` we search for the block `B` that should be connected.\
-That means that we take coord `x` for each block (let's named it `B`) and check whether calculated `y` matches coord `B.y` of this block. If they matches then this is the block we are looking for.\
-We treats it as a function that takes variable `x` as `B.x` and checks if `B.y` matches calculated `y` (including error - reading receipts with OCR is not perfect) for set block `A` (because we take `A` and try connect it with other blocks).
+Those calculations are used to connect blocks into one line. For every text block `A` we search for the block that should be connected.\
+It means, that we take coord `x` for each block (let's named it `B`) and check whether calculated `y` matches coord `B.y`. If they matches then this is the block we are looking for.\
+We treats it as a function run for specific taxt block `A`, that takes variable `x` (`B.x`) and returns expected `y`. Then we check if `B.y` matches calculated `y` (including error - reading receipts with OCR is not perfect).
 
 *From `lib/core/utils/coordinates.dart`:*
 ```dart
